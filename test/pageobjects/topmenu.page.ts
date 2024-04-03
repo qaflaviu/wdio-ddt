@@ -4,6 +4,8 @@ import { $ } from "@wdio/globals";
 class TopMenu extends Page {
   async navigateToSection(section: TopMenuSection) {
     await (await $(`a[href*='${section}']`)).click();
+    await this.waitForUrlChange(section);
+    await $(`header`).moveTo();
   }
 }
 
