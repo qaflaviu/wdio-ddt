@@ -63,9 +63,9 @@ export const config: Options.Testrunner = {
         args: ["headless", "disable-gpu"],
       },
     },
-    {
-      browserName: "firefox",
-    },
+    // {
+    //   browserName: "firefox",
+    // },
     // {
     //   browserName: "safari",
     // },

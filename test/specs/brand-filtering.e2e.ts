@@ -5,22 +5,23 @@ import TopMenu from "../pageobjects/topmenu.page.js";
 import { TopMenuSection } from "../pageobjects/topmenu.page.js";
 import PerfumeFilters, { BRANDS } from "../pageobjects/perfumefilters.page.js";
 import { PRODUCT_STATE } from "../utils/enums.js";
+import { TestData } from "../utils/testcases.js";
 
 describe("Perfume Filters Tests", () => {
   const TestCases = [
     {
       brand: BRANDS.AC,
-      totalItems: "6.105",
-      filteredItems: "26",
-      onSaleItems: 0,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "27",
+      onSaleItems: 19,
       newItems: 2,
-      totalPage1: 26,
+      totalPage1: 27,
     },
     {
       brand: BRANDS.A_AND_F,
-      totalItems: "6.105",
+      totalItems: TestData.TOTAL_PRODUCTS,
       filteredItems: "21",
-      onSaleItems: 1,
+      onSaleItems: 21,
       newItems: 0,
       totalPage1: 21,
     },

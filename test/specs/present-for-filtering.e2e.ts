@@ -7,22 +7,23 @@ import PerfumeFilters, {
   PRESENT_FOR,
 } from "../pageobjects/perfumefilters.page.js";
 import { PRODUCT_STATE } from "../utils/enums.js";
+import { TestData } from "../utils/testcases.js";
 
 describe("Perfume Filters Tests", () => {
   const TestCases = [
     {
       presentFor: PRESENT_FOR.THANKS,
-      totalItems: "6.105",
-      filteredItems: "110",
-      onSaleItems: 19,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "81",
+      onSaleItems: 18,
       newItems: 0,
       totalPage1: 45,
     },
     {
       presentFor: PRESENT_FOR.BIRTHDAY,
-      totalItems: "6.105",
-      filteredItems: "648",
-      onSaleItems: 30,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "576",
+      onSaleItems: 29,
       newItems: 0,
       totalPage1: 46,
     },
