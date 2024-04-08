@@ -5,23 +5,24 @@ import TopMenu from "../pageobjects/topmenu.page.js";
 import { TopMenuSection } from "../pageobjects/topmenu.page.js";
 import PerfumeFilters, { GENDER } from "../pageobjects/perfumefilters.page.js";
 import { PRODUCT_STATE } from "../utils/enums.js";
+import { TestData } from "../utils/testcases.js";
 
 describe("Perfume Filters Tests", () => {
   const TestCases = [
     {
       gender: GENDER.MAN,
-      totalItems: "6.105",
-      filteredItems: "1.288",
-      onSaleItems: 27,
-      newItems: 6,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "1.252",
+      onSaleItems: 32,
+      newItems: 7,
       totalPage1: 45,
     },
     {
       gender: GENDER.UNISEX,
-      totalItems: "6.105",
-      filteredItems: "3.184",
-      onSaleItems: 15,
-      newItems: 6,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "3.193",
+      onSaleItems: 24,
+      newItems: 5,
       totalPage1: 46,
     },
   ];

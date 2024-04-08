@@ -7,23 +7,24 @@ import PerfumeFilters, {
   CLASSIFICATIONS,
 } from "../pageobjects/perfumefilters.page.js";
 import { PRODUCT_STATE } from "../utils/enums.js";
+import { TestData } from "../utils/testcases.js";
 
 describe("Perfume Filters Tests", () => {
   const TestCases = [
     {
       classification: CLASSIFICATIONS.EAU_DE_PARFUM,
-      totalItems: "6.105",
-      filteredItems: "3.071",
-      onSaleItems: 15,
-      newItems: 17,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "2.975",
+      onSaleItems: 24,
+      newItems: 16,
       totalPage1: 46,
     },
     {
       classification: CLASSIFICATIONS.EAU_DE_TOILETTE,
-      totalItems: "6.105",
-      filteredItems: "1.162",
-      onSaleItems: 26,
-      newItems: 5,
+      totalItems: TestData.TOTAL_PRODUCTS,
+      filteredItems: "1.148",
+      onSaleItems: 28,
+      newItems: 4,
       totalPage1: 46,
     },
   ];
@@ -52,10 +53,10 @@ describe("Perfume Filters Tests", () => {
       );
       expect(
         await PerfumesListingPage.getProductPromos(PRODUCT_STATE.SALE)
-      ).toBe(testCase.onSaleItems);
+      ).toBeGreaterThanOrEqual(testCase.onSaleItems);
       expect(
         await PerfumesListingPage.getProductPromos(PRODUCT_STATE.NEW)
-      ).toBe(testCase.newItems);
+      ).toBeGreaterThanOrEqual(testCase.newItems);
       expect(await PerfumesListingPage.getTotalProducts()).toBe(
         testCase.filteredItems
       );

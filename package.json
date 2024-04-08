@@ -14,6 +14,7 @@
     "wdio": "wdio run ./wdio.conf.ts"
   },
   "dependencies": {
-    "allure-commandline": "^2.27.0"
+    "allure-commandline": "^2.27.0",
+    "chai-webdriverio": "^1.0.0"
   }
 }
